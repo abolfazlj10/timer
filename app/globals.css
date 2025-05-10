@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'pacifico';
+    src: url('/Pacifico-Regular.ttf');
+}
+
+body{
+    @apply bg-firstColor text-secondColor;
+}
+
+.mainContainer{
+    @apply h-dvh flex flex-col justify-center items-center;
+}
+.timer{
+    @apply font-pacifico text-[190px];
+}
+.playBtn{
+    @apply text-3xl ;
+}

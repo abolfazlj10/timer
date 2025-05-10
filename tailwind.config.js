@@ -9,7 +9,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        pacifico : ['pacifico']
+      },
+      colors:{
+        firstColor:'#1D2D44',
+        secondColor:'#F0EBD8'
+      }
+    },
   },
   plugins: [],
 }
