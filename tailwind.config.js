@@ -11,11 +11,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        pacifico : ['pacifico']
+        pacifico : ['pacifico'],
+        grotesk : ['grotesk']
       },
       colors:{
-        firstColor:'#1D2D44',
-        secondColor:'#F0EBD8'
+        firstColor:'#000',
+        secondColor:'#FFFFFF'
       }
     },
   },
