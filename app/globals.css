@@ -6,17 +6,26 @@
     font-family: 'pacifico';
     src: url('/Pacifico-Regular.ttf');
 }
+@font-face {
+    font-family: 'grotesk';
+    src: url('/SpaceGrotesk-VariableFont_wght.ttf');
+}
 
 body{
-    @apply bg-firstColor text-secondColor;
+    @apply bg-gradient-to-r from-[#141E30] to-[#243B55] text-secondColor;
 }
-
 .mainContainer{
-    @apply h-dvh flex flex-col justify-center items-center;
+    @apply h-dvh grid grid-rows-3 justify-center ;
+}
+.title{
+    @apply mx-auto font-pacifico mt-5;
 }
 .timer{
-    @apply font-pacifico text-[190px];
+    @apply font-grotesk text-[190px];
+}
+.containerButtons{
+    @apply flex justify-center items-center gap-2;
 }
 .playBtn{
-    @apply text-3xl ;
+    @apply text-xl border border-white/10 text-white p-2 rounded-full;
 }

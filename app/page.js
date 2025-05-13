@@ -1,22 +1,32 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { VscPlay } from "react-icons/vsc";
+import { HiPause } from "react-icons/hi2";
+import { CgCoffee } from "react-icons/cg";
+import { BsArrowRepeat } from "react-icons/bs";
 
 export default function Home() {
   const [time,seTtime] = useState({min:30 , sec:0})
-
-  var timerInterval;
+  const [isPlay,setIsPlay] = useState(false)
+  const intervalContainer = useRef(null)
   const starter = () => {
-    timerInterval = setInterval(() => {
-      seTtime(prev =>{
-        if(prev.min == 0 && prev.sec == 0){
-          clearInterval(timerInterval)
-          return {min:0,sec:0}
-        }
-        else if(prev.sec == 0) return {min:prev.min -1 , sec:59}
-        else return {...prev,sec:prev.sec -1}
-      })
-    }, 100);
+    if(isPlay){
+      clearInterval(intervalContainer.current)
+      setIsPlay(false)
+    }else{
+      setIsPlay(true)
+      intervalContainer.current = setInterval(() => {
+        seTtime(prev =>{
+          if(prev.min == 0 && prev.sec == 0){
+            clearInterval(intervalContainer.current)
+            setIsPlay(false)
+            return {min:0,sec:0}
+          }
+          else if(prev.sec == 0) return {min:prev.min -1 , sec:59}
+          else return {...prev,sec:prev.sec -1}
+        })
+      }, 1000);
+    }
   }
 
   const editorTime = () => {
@@ -37,8 +47,14 @@ export default function Home() {
 
   return (
     <div className="mainContainer">
+      <div className="title">timeToDo</div>
       <div className="timer">{ editorTime() }</div>
-      <button onClick={starter} className="playBtn"><VscPlay /></button>
+      <div className="containerButtons">
+        <button className="playBtn"><CgCoffee /></button>
+        <button onClick={starter} className="playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
+        <button className="playBtn"><BsArrowRepeat /></button>
+                
+      </div>
     </div>
   );
 }
