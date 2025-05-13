@@ -1,4 +1,9 @@
 'use client'
+
+import Sidebar from "./component/sidebar";
+import Timer from "./component/timer";
+import Controls from "./component/controls";
+
 import { useEffect, useRef, useState } from "react";
 import { VscPlay } from "react-icons/vsc";
 import { HiPause } from "react-icons/hi2";
@@ -9,6 +14,8 @@ export default function Home() {
   const [time,seTtime] = useState({min:30 , sec:0})
   const [isPlay,setIsPlay] = useState(false)
   const intervalContainer = useRef(null)
+  const [restMood,setRestMood] = useState(false)
+  
   const starter = () => {
     if(isPlay){
       clearInterval(intervalContainer.current)
@@ -47,14 +54,16 @@ export default function Home() {
 
   return (
     <div className="mainContainer">
-      <div className="title">timeToDo</div>
-      <div className="timer">{ editorTime() }</div>
-      <div className="containerButtons">
-        <button className="playBtn"><CgCoffee /></button>
-        <button onClick={starter} className="playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
-        <button className="playBtn"><BsArrowRepeat /></button>
-                
-      </div>
+      <Sidebar/>
+      <Timer/>
+      <Controls/>
+      {/* <div className="timer">{ editorTime() }</div> */}
+      {/* <div className="containerButtons">
+        <button onClick={() => setRestMood(true)} className="btn"><CgCoffee /></button>
+        <button onClick={starter} className="btn playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
+        <button className="btn"><BsArrowRepeat /></button>
+        {restMood}   
+      </div> */}
     </div>
   );
 }
