@@ -10,25 +10,18 @@
     font-family: 'grotesk';
     src: url('/SpaceGrotesk-VariableFont_wght.ttf');
 }
-@font-face {
-    font-family: 'pixelifySans';
-    src: url('/PixelifySans-Medium.ttf');
-}
 
 body{
-    @apply bg-gradient-to-r from-[#141E30] to-[#243B55] text-secondColor;
+    @apply bg-gradient-to-r from-[#141E30] to-[#243B55] text-[#ebebeb];
 }
 .mainContainer{
     @apply h-dvh grid grid-rows-[1fr_150px];
 }
-.title{
-    @apply mx-auto font-pacifico mt-5;
-}
 .display{
-    @apply font-pacifico text-[190px] flex justify-center items-center;
+    @apply font-grotesk font-bold text-[190px] flex justify-center items-center;
 }
 .glass{
-    @apply border px-[200px] py-[100px] rounded-xl;
+    @apply border w-[800px] py-[100px] rounded-xl text-center;
 }
 .controls{
     @apply flex justify-center items-center;

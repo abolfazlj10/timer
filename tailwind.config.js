@@ -12,8 +12,7 @@ module.exports = {
     extend: {
       fontFamily:{
         pacifico : ['pacifico'],
-        grotesk : ['grotesk'],
-        pixelifySans : ['pixelifySans']
+        grotesk : ['grotesk']
       },
     },
   },
