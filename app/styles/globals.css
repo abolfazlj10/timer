@@ -10,6 +10,10 @@
     font-family: 'grotesk';
     src: url('/SpaceGrotesk-VariableFont_wght.ttf');
 }
+@font-face {
+    font-family: 'pixelifySans';
+    src: url('/PixelifySans-Medium.ttf');
+}
 
 body{
     @apply bg-gradient-to-r from-[#141E30] to-[#243B55] text-secondColor;

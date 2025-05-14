@@ -12,12 +12,9 @@ module.exports = {
     extend: {
       fontFamily:{
         pacifico : ['pacifico'],
-        grotesk : ['grotesk']
+        grotesk : ['grotesk'],
+        pixelifySans : ['pixelifySans']
       },
-      colors:{
-        firstColor:'#000',
-        secondColor:'#FFFFFF'
-      }
     },
   },
   plugins: [],
