@@ -1,15 +1,17 @@
-import { createContext , useContext, useState } from "react";
+import { createContext , useContext, useEffect, useState } from "react";
 
 const AppContext = createContext()
 
 export const AppProvider = ({children}) =>{
-    const [time,setTime] = useState(new Date)
-    const updateTime = () => {
-        setTime(new Date)
-    }
+    const [isPlay,setIsPlay] = useState(false)
+    
     return(
-        <AppContext.Provider value={{time,updateTime}}>
+        <AppContext.Provider value={{isPlay,setIsPlay}}>
             {children}
         </AppContext.Provider>
     )
+}
+
+export const useAppContext = () => {
+    return useContext(AppContext)
 }

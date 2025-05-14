@@ -1,18 +1,18 @@
-// 'use client'
+'use client'
+import { useEffect, useState, useRef } from "react"
+import { useAppContext } from "../context/appContext"
+
 const Timer = () => {
-    const [time,seTtime] = useState({min:30 , sec:0})
-    const [isPlay,setIsPlay] = useState(false)
+    const {isPlay,setIsPlay} = useAppContext()
+
+    const [time,setTime] = useState({min:30 , sec:0})
     const intervalContainer = useRef(null)
-    const [restMood,setRestMood] = useState(false)
+    const isinitialMounts = useRef(true)
 
     const starter = () => {
         if(isPlay){
-            clearInterval(intervalContainer.current)
-            setIsPlay(false)
-        }else{
-            setIsPlay(true)
             intervalContainer.current = setInterval(() => {
-                seTtime(prev =>{
+                setTime(prev =>{
                     if(prev.min == 0 && prev.sec == 0){
                         clearInterval(intervalContainer.current)
                         setIsPlay(false)
@@ -22,23 +22,23 @@ const Timer = () => {
                     else return {...prev,sec:prev.sec -1}
                 })
             }, 1000);
-        }
+        }else
+            clearInterval(intervalContainer.current)
     }
+
+    useEffect(()=>{
+        if(isinitialMounts.current){
+            isinitialMounts.current = false
+            return;
+        }
+        starter()
+        return () => clearInterval(intervalContainer.current)
+    },[isPlay,setIsPlay])
     
     const editorTime = () => {
-        let timeLocal = {}
-
-        if(time.min.toString().length == 1 || time.min == 0)
-            timeLocal.min = `0${time.min}`
-        else 
-            timeLocal.min = time.min
-
-        if(time.sec.toString().length == 1 || time.sec == 0)
-            timeLocal.sec = `0${time.sec}`
-        else 
-            timeLocal.sec = time.sec
-        
-        return `${timeLocal.min}:${timeLocal.sec}`
+        const min = time.min.toString().padStart(2,'0')
+        const sec = time.sec.toString().padStart('2',0)
+        return `${min}:${sec}`
     }
 
     return (
