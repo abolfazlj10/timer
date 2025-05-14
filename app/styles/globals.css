@@ -20,7 +20,7 @@ body{
 .title{
     @apply mx-auto font-pacifico mt-5;
 }
-.timer{
+.display{
     @apply font-pacifico text-[190px];
 }
 .containerButtons{

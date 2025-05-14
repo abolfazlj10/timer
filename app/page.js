@@ -1,7 +1,7 @@
 'use client'
 
 import Sidebar from "./component/sidebar";
-import Timer from "./component/timer";
+import Display from "./component/display";
 import Controls from "./component/controls";
 import { AppProvider } from "./context/appContext";
 
@@ -14,7 +14,7 @@ export default function Home() {
     <AppProvider>
       <div className="mainContainer">
         <Sidebar/>
-        <Timer/>
+        <Display/>
         <Controls/>
       </div>
     </AppProvider>

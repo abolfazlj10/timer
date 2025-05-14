@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from "react"
 import { useAppContext } from "../context/appContext"
 
-const Timer = () => {
+const Display = () => {
     const {isPlay,setIsPlay} = useAppContext()
 
     const [time,setTime] = useState({min:30 , sec:0})
@@ -42,8 +42,8 @@ const Timer = () => {
     }
 
     return (
-        <div className="timer">{ editorTime() }</div>
+        <div className="display">{ editorTime() }</div>
 
     )
 }
-export default Timer;
+export default Display;
