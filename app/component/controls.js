@@ -1,7 +1,16 @@
+import { VscPlay } from "react-icons/vsc";
+import { HiPause } from "react-icons/hi2";
+import { CgCoffee } from "react-icons/cg";
+import { BsArrowRepeat } from "react-icons/bs";
+
 const Controls = () => {
     return (
         <div>
-            here is buttons
+            <div className="containerButtons">
+                <button className="btn"><CgCoffee /></button>
+                <button onClick={starter} className="btn playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
+                <button className="btn"><BsArrowRepeat /></button>
+            </div>
         </div>
     )
 }
