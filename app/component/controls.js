@@ -10,9 +10,13 @@ const Controls = () => {
     return (
         <div className="controls">
             <div className="boxControls">
-                <button className="btn"><CgCoffee /></button>
-                <button onClick={() =>setIsPlay(!isPlay)} className="btn playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
-                <button className="btn"><BsArrowRepeat /></button>
+                <div className="titleTime">Work</div>
+                <div className="buttons">
+                    <button className="btn"><CgCoffee /></button>
+                    <button onClick={() =>setIsPlay(!isPlay)} className="btn playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
+                    <button className="btn"><BsArrowRepeat /></button>
+                </div>
+                <div className="description">description</div>
             </div>
         </div>
     )

@@ -23,11 +23,16 @@ body{
 .glass{
     @apply border w-[800px] py-[100px] rounded-xl text-center;
 }
+
+
 .controls{
     @apply flex justify-center items-center;
 }
 .boxControls{
-    @apply flex justify-center items-center gap-2 border border-b-0 rounded-t-xl px-[70px] h-full;
+    @apply border border-b-0 rounded-t-xl px-[100px] h-full grid grid-rows-3;
+}
+.buttons{
+    @apply flex justify-center items-center gap-2;
 }
 .btn{
     @apply text-xl border border-white/10 text-white p-2 rounded-full;
@@ -35,6 +40,13 @@ body{
 .playBtn{
     @apply !text-3xl bg-blue-600;
 }
+.titleTime{
+    @apply text-xl font-bold text-center my-auto;
+}
+.description{
+    @apply text-sm text-center my-auto;
+}
+
 .sidebar{
     @apply w-[300px] h-full flex justify-center items-center fixed top-0 right-0 border border-dashed border-white/50;
 }

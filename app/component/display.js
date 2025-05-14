@@ -47,7 +47,6 @@ const Display = () => {
                 {editorTime()}
             </div>
         </div>
-
     )
 }
 export default Display;
