@@ -8,8 +8,8 @@ const Controls = () => {
     const {isPlay,setIsPlay} = useAppContext()
 
     return (
-        <div>
-            <div className="containerButtons">
+        <div className="controls">
+            <div className="boxControls">
                 <button className="btn"><CgCoffee /></button>
                 <button onClick={() =>setIsPlay(!isPlay)} className="btn playBtn">{isPlay ? <HiPause /> : <VscPlay />}</button>
                 <button className="btn"><BsArrowRepeat /></button>

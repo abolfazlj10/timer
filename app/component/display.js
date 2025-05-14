@@ -42,7 +42,11 @@ const Display = () => {
     }
 
     return (
-        <div className="display">{ editorTime() }</div>
+        <div className="display">
+            <div className="glass">
+                {editorTime()}
+            </div>
+        </div>
 
     )
 }

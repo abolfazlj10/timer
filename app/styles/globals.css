@@ -15,20 +15,29 @@ body{
     @apply bg-gradient-to-r from-[#141E30] to-[#243B55] text-secondColor;
 }
 .mainContainer{
-    @apply h-dvh ;
+    @apply h-dvh grid grid-rows-[1fr_150px];
 }
 .title{
     @apply mx-auto font-pacifico mt-5;
 }
 .display{
-    @apply font-pacifico text-[190px];
+    @apply font-pacifico text-[190px] flex justify-center items-center;
 }
-.containerButtons{
-    @apply flex justify-center items-center gap-2;
+.glass{
+    @apply border px-[200px] py-[100px] rounded-xl;
+}
+.controls{
+    @apply flex justify-center items-center;
+}
+.boxControls{
+    @apply flex justify-center items-center gap-2 border border-b-0 rounded-t-xl px-[70px] h-full;
 }
 .btn{
     @apply text-xl border border-white/10 text-white p-2 rounded-full;
 }
 .playBtn{
     @apply !text-3xl bg-blue-600;
+}
+.sidebar{
+    @apply w-[300px] h-full flex justify-center items-center fixed top-0 right-0 border border-dashed border-white/50;
 }
